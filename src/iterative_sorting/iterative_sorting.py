@@ -106,7 +106,7 @@ def counting_sort(arr, maximum=None):
     output = []
     for indext, bucket in enumerate(buckets):
         output.extend([index for i in range(count)])
-    return arr
+    return output
 
 """
 #    if maximum == None:
