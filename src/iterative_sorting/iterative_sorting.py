@@ -2,11 +2,10 @@
 def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
+        smallest_index = i
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
-        for j in range(i+1, len(arr)):
+        for j in range(i, len(arr)):
             if arr[smallest_index] > arr[j]:
                 smallest_index = j
         # TO-DO: swap
@@ -24,6 +23,18 @@ def bubble_sort(arr):
                 arr[j], arr[j+1] = arr[j+1], arr[j]
     return arr
 
+"""
+Teacher's solution.
+def bubble_sort(arr):
+    swaps_occurred = True
+    while swaps_occurred:
+        swaps_occurred = False
+        for i in range(len(arr)-1):
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                swaps_occurred = True
+    return arr
+"""
 
 '''
 STRETCH: implement the Counting Sort function below
@@ -81,7 +92,23 @@ def counting_sort(arr, maximum=None):
 
     return arr
 
+"""
+Teacher's solution:
+def counting_sort(arr, maximum=None):
+    if maximum is None:
+        maximum = max(arr)
+    buckets = [0 for i in range(maximum + 1)]
+    for value in arr:
+        if value < 0:
+            return "Error, negative numbers not allowed in Count Sort"
+        buckets[value] += 1
 
+    output = []
+    for indext, bucket in enumerate(buckets):
+        output.extend([index for i in range(count)])
+    return arr
+
+"""
 #    if maximum == None:
 #        maximum = len(arr)
 #    counts = [0] * ((maximum) + 1)
