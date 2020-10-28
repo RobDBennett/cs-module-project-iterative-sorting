@@ -18,7 +18,7 @@ def selection_sort(arr):
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n-1):
-        for j in range(0, n-i-1):
+        for j in range(0, n-i-1): #This will be shortening the range
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
     return arr
@@ -95,6 +95,9 @@ def counting_sort(arr, maximum=None):
 """
 Teacher's solution:
 def counting_sort(arr, maximum=None):
+    if len(arr) == 0:
+        return arr
+    
     if maximum is None:
         maximum = max(arr)
     buckets = [0 for i in range(maximum + 1)]

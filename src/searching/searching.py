@@ -20,5 +20,6 @@ def binary_search(arr, target):
         else:
             right = midpoint - 1
 
-
     return -1  # not found
+#Constant space complexity. Variables don't count. O(n)
+#O(log(n))
